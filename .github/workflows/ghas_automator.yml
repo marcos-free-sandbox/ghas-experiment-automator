@@ -28,7 +28,7 @@ jobs:
           git config --global user.email "ghas.enablement@example.com"
       - name: Enable security on organization (javascript)
         run: |
-          npm run node ./src/getRepos.ts
+          npm node ./src/getRepos.ts
           npm run start
         env:
           LANGUAGE_TO_CHECK: "python"
