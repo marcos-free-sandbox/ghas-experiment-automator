@@ -1,12 +1,12 @@
 on: [workflow_dispatch]
 
 env:
-  GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   ENABLE_ON: "codescanning"
   DEBUG: "ghas:*"
   CREATE_ISSUE: "true"
   GHES: "false"
-  GITHUB_ORG: "marcos-free-sandbox"
+  GITHUB_ORG: ${{ secrets.MY_ORG }}
+  GITHUB_API_TOKEN: ${{ secrets.MY_TOKEN }}
 
 jobs:
   enable-security-javascript:
