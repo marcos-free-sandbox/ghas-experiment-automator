@@ -20,7 +20,7 @@ jobs:
           node-version: '20'
       - uses: actions/checkout@v3
         with:
-          repository: NickLiffen/ghas-enablement
+          repository: marcos-free-sandbox/ghas-enablement
       - name: Get dependencies and configure
         run: |
           yarn
