@@ -1,3 +1,4 @@
+name: "CodeQL Bulk Enablement"
 on: [workflow_dispatch]
 
 env:
@@ -26,10 +27,17 @@ jobs:
           yarn
           git config --global user.name "ghas-enablement"
           git config --global user.email "ghas.enablement@example.com"
-      - name: Enable security on organization (javascript)
+      - name: Enable security on organization (python)
         run: |
           npm run getRepos:debug
           npm run start:debug
         env:
           LANGUAGE_TO_CHECK: "python"
           TEMP_DIR: ${{ github.workspace }}
+      - name: Enable security on organization (javascript)
+        run: |
+          npm run getRepos:debug
+          npm run start:debug
+        env:
+          LANGUAGE_TO_CHECK: "javascript"
+          TEMP_DIR: ${{ github.workspace }}          
